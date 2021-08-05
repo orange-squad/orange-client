@@ -7,13 +7,14 @@ const SignIn = ({ setUser, createAlert }) => {
     password: '',
   })
 
-  const handleChange = (event) =>
+  function handleChange(event) {
     setCredentials((prev) => ({
       ...prev,
       [event.target.name]: event.target.value,
     }))
+  }
 
-  const handleSubmit = (event) => {
+  function handleSubmit(event) {
     event.preventDefault()
     signIn(credentials)
       .then((res) => {

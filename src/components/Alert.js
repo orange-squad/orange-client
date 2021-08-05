@@ -22,7 +22,7 @@ const Alert = ({ id, message, variant, removeAlert }) => {
       variant={variant}
       onClose={() => setShow(false)}
     >
-      <p className='alert-body'>{message}</p>
+      <p>{message}</p>
     </BootstrapAlert>
   )
 }

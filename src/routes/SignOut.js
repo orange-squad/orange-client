@@ -10,7 +10,7 @@ const SignOut = ({ user, setUser }) => {
   }
   return (
     <div>
-      <button onclick={handleSubmit}>Sign Out</button>
+      <button onClick={handleSubmit}>Sign Out</button>
     </div>
   )
 }

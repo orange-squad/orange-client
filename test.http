@@ -1,0 +1,40 @@
+POST http://localhost:4741/sign-up HTTP/1.1
+Content-Type: application/json
+
+{
+  "credentials": {
+    "email": "test@email",
+    "password": "test",
+    "password_confirmation": "test"
+  }
+}
+###
+
+POST http://localhost:4741/sign-in HTTP/1.1
+Content-Type: application/json
+
+{
+  "credentials": {
+    "email": "test@email",
+    "password": "test"
+  }
+}
+###
+
+PATCH http://localhost:4741/change-password HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer 5e78db8ded400be48258f154ae5281f8
+
+{
+  "passwords": {
+    "old": "test2",
+    "new": "test"
+  }
+}
+###
+
+DELETE http://localhost:4741/sign-out HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer 5e78db8ded400be48258f154ae5281f8
+
+###

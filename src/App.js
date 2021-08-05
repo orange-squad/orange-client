@@ -9,11 +9,12 @@ const App = () => {
   const [user, setUser] = useState(null)
   const [alerts, setAlerts] = useState([])
 
-  const createAlert = function ({ message, variant }) {
+  const createAlert = ({ message, variant }) => {
     const id = uuid()
     setAlerts((prev) => [...prev, { message, variant, id }])
   }
-  const removeAlert = function ({ id }) {
+
+  const removeAlert = ({ id }) => {
     setAlerts((prev) => {
       prev.filter((alert) => alert.id !== id)
     })
@@ -26,7 +27,7 @@ const App = () => {
       <SignIn setUser={setUser} createAlert={createAlert} />
       <SignOut user={user} setUser={setUser} createAlert={createAlert} />
 
-      {/* {alerts.map((alert) => (
+      {alerts.map((alert) => (
         <Alert
           key={alert.id}
           message={alert.message}
@@ -34,7 +35,7 @@ const App = () => {
           id={alert.id}
           removeAlert={removeAlert}
         />
-      ))} */}
+      ))}
     </div>
   )
 }
