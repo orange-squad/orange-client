@@ -1,20 +1,23 @@
 {
   "files": {
-    "main.css": "/orange-client/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/orange-client/static/js/main.adb9abec.chunk.js",
-    "main.js.map": "/orange-client/static/js/main.adb9abec.chunk.js.map",
+    "main.css": "/orange-client/static/css/main.afd7172b.chunk.css",
+    "main.js": "/orange-client/static/js/main.1d2a4377.chunk.js",
+    "main.js.map": "/orange-client/static/js/main.1d2a4377.chunk.js.map",
     "runtime-main.js": "/orange-client/static/js/runtime-main.87d5d412.js",
     "runtime-main.js.map": "/orange-client/static/js/runtime-main.87d5d412.js.map",
-    "static/js/2.c27e8197.chunk.js": "/orange-client/static/js/2.c27e8197.chunk.js",
-    "static/js/2.c27e8197.chunk.js.map": "/orange-client/static/js/2.c27e8197.chunk.js.map",
+    "static/css/2.9082872e.chunk.css": "/orange-client/static/css/2.9082872e.chunk.css",
+    "static/js/2.8a6fca0e.chunk.js": "/orange-client/static/js/2.8a6fca0e.chunk.js",
+    "static/js/2.8a6fca0e.chunk.js.map": "/orange-client/static/js/2.8a6fca0e.chunk.js.map",
     "index.html": "/orange-client/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/orange-client/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.c27e8197.chunk.js.LICENSE.txt": "/orange-client/static/js/2.c27e8197.chunk.js.LICENSE.txt"
+    "static/css/2.9082872e.chunk.css.map": "/orange-client/static/css/2.9082872e.chunk.css.map",
+    "static/css/main.afd7172b.chunk.css.map": "/orange-client/static/css/main.afd7172b.chunk.css.map",
+    "static/js/2.8a6fca0e.chunk.js.LICENSE.txt": "/orange-client/static/js/2.8a6fca0e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.87d5d412.js",
-    "static/js/2.c27e8197.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.adb9abec.chunk.js"
+    "static/css/2.9082872e.chunk.css",
+    "static/js/2.8a6fca0e.chunk.js",
+    "static/css/main.afd7172b.chunk.css",
+    "static/js/main.1d2a4377.chunk.js"
   ]
 }
