@@ -1,3 +1,6 @@
+GET http://localhost:3000/proxy/?number=&enumeration_type=NPI-1&first_name=John&state=NY&limit=10&pretty=on
+
+###
 GET https://npiregistry.cms.hhs.gov/api/?number=&enumeration_type=NPI-1&first_name=John&state=NY&limit=10&pretty=on&version=2.1
 
 ###

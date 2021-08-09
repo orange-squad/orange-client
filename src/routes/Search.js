@@ -1,34 +1,30 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import ProviderCard from '../components/ProviderCard'
+import CardColumns from 'react-bootstrap/CardColumns'
+import { Container } from 'react-bootstrap'
 
 const Search = () => {
   const [city, setCity] = useState('')
   const [state, setState] = useState('')
   const [taxonomy, setTaxonomy] = useState('')
 
-  const [results, setResults] = useState(null)
+  const [results, setResults] = useState([])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log('I am doing a thing')
-    // const response = await axios({
-    //   method: 'GET',
-    // headers: {
-    //   'Access-Control-Allow-Origin': '*',
-    // },
-    //   mode: 'no-cors',
-    //   url: `https://npiregistry.cms.hhs.gov/api/?number=&taxonomy_description=${taxonomy}&city=${city}&state=${state}&limit=10&pretty=on&version=2.1`,
-    // })
-
-    const response = await fetch(
-      // `https://npiregistry.cms.hhs.gov/api/?number=&taxonomy_description=${taxonomy}&city=${city}&state=${state}&limit=10&pretty=on&version=2.1`,
-      `https://npi-registry-proxy.herokuapp.com/?city=${city}`
-    )
-    await console.log(response)
+    try {
+      const response = await fetch(
+        `https://npi-registry-proxy.herokuapp.com/?taxonomy_description=${taxonomy}&city=${city}&state=${state}`
+      )
+      const json = await response.json()
+      await setResults(json.results)
+    } catch {
+      console.error()
+    }
   }
 
   return (
-    <div>
+    <Container>
       <form onSubmit={handleSubmit}>
         <input
           type='text'
@@ -46,12 +42,17 @@ const Search = () => {
           type='text'
           value={taxonomy}
           onChange={(e) => setTaxonomy(e.target.value)}
-          placeholder='Enter Taxonomy Description'
+          placeholder='Enter Taxonomy'
         />
 
         <button type='submit'>Search</button>
       </form>
-    </div>
+      <CardColumns>
+        {results.map((result, index) => {
+          return <ProviderCard data={result} key={index} />
+        })}
+      </CardColumns>
+    </Container>
   )
 }
 
