@@ -11,23 +11,19 @@ const Search = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     console.log('I am doing a thing')
-    const response = await axios({
-      method: 'GET',
-      // headers: {
-      //   'Access-Control-Allow-Origin': '*',
-      // },
-      // mode: 'no-cors',
-      url: `https://npiregistry.cms.hhs.gov/api/?number=&taxonomy_description=${taxonomy}&city=${city}&state=${state}&limit=10&pretty=on&version=2.1`,
-    })
+    // const response = await axios({
+    //   method: 'GET',
+    // headers: {
+    //   'Access-Control-Allow-Origin': '*',
+    // },
+    //   mode: 'no-cors',
+    //   url: `https://npiregistry.cms.hhs.gov/api/?number=&taxonomy_description=${taxonomy}&city=${city}&state=${state}&limit=10&pretty=on&version=2.1`,
+    // })
 
-    // const response = await fetch(
-    //   `https://npiregistry.cms.hhs.gov/api/?number=&taxonomy_description=${taxonomy}&city=${city}&state=${state}&limit=10&pretty=on&version=2.1`,
-    //   {
-    //     headers: {
-    //       'Access-Control-Allow-Origin': '*',
-    //     },
-    //   }
-    // )
+    const response = await fetch(
+      // `https://npiregistry.cms.hhs.gov/api/?number=&taxonomy_description=${taxonomy}&city=${city}&state=${state}&limit=10&pretty=on&version=2.1`,
+      `https://npi-registry-proxy.herokuapp.com/?city=${city}`
+    )
     await console.log(response)
   }
 
