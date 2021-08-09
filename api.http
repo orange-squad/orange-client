@@ -8,14 +8,7 @@ GET https://npiregistry.cms.hhs.gov/api/?number=&enumeration_type=NPI-1&city=Roc
 
 ###
 
-GET https://developer.orionhealth.io/access-token/
-Accept: application/json
-Authorization: Bearer <Access Token>
+GET https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyBFGv9-hlOIkwuDIwBDBinQVyiKDsFBnrc&inputtype=textquery&fields=place_id,rating,user_ratings_total&input=dmitry%20malkin
 
 ###
-GET https://api.orionhealth.io/fhir/1.0/Practitioner/?name=demo provider&address-city=Latrobe&address-state=PA&specialty=specialty-coding-system%7Cspecialty-code&qualification=qualification-coding-system%7Cqualification-code
-Accept: application/json
-Authorization: Bearer AVh9Oon9LVxA2SCYp5EkZbyzrQD6
-
-###
-GET https://data.cms.gov/data-api/v1/dataset/02c0692d-e2d9-4714-80c7-a1d16d72ec66/data
+GET https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyBFGv9-hlOIkwuDIwBDBinQVyiKDsFBnrc&place_id=ChIJtY_9lWFYwokRFRUrwJpWr6c&fields=rating,review,user_ratings_total,website

@@ -4,10 +4,23 @@ import ListGroup from 'react-bootstrap/ListGroup'
 
 const ProviderCard = ({ data }) => {
   const { credential, name, gender } = data.basic
+
+  function titleCase(str) {
+    return str
+      .toLowerCase()
+      .split(' ')
+      .map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+      })
+      .join(' ')
+  }
+
   return (
     <Card style={{ width: '30rem' }}>
       <Card.Header>
-        {name} {credential}
+        <Card.Title>
+          {titleCase(name)} {credential}
+        </Card.Title>
       </Card.Header>
       <ListGroup>
         {data.taxonomies.map((taxonomy) => {

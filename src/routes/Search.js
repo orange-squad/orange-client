@@ -24,9 +24,6 @@ const Search = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      // const response = await fetch(
-      //   `https://npi-registry-proxy.herokuapp.com/?taxonomy_description=${taxonomy}&city=${city}&state=${state}`
-      // )
       const response = await fetch(
         `https://sleepy-earth-76653.herokuapp.com/?number=${number}&enumeration_type=${enumeration_type}&taxonomy_description=${taxonomy}&first_name=${first_name}&use_first_name_alias=${use_first_name_alias}&last_name=${last_name}&organization_name=${organization_name}&address_purpose=${address_purpose}&city=${city}&state=${state}&postal_code=${postal_code}&country_code=${country_code}&limit=${limit}&skip=${skip}&version=2.1&pretty=true`
       )
@@ -62,8 +59,8 @@ const Search = () => {
         <button type='submit'>Search</button>
       </form>
       <CardColumns>
-        {results.map((result, index) => {
-          return <ProviderCard data={result} key={index} />
+        {results.map((result) => {
+          return <ProviderCard data={result} key={result.number} />
         })}
       </CardColumns>
     </Container>
