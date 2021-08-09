@@ -1,0 +1,18 @@
+GET https://npiregistry.cms.hhs.gov/api/?number=&enumeration_type=NPI-1&first_name=John&state=NY&limit=10&pretty=on&version=2.1
+
+###
+GET https://npiregistry.cms.hhs.gov/api/?number=&enumeration_type=NPI-1&city=Rockville&state=MD&pretty=on&version=2.1
+
+###
+
+GET https://developer.orionhealth.io/access-token/
+Accept: application/json
+Authorization: Bearer <Access Token>
+
+###
+GET https://api.orionhealth.io/fhir/1.0/Practitioner/?name=demo provider&address-city=Latrobe&address-state=PA&specialty=specialty-coding-system%7Cspecialty-code&qualification=qualification-coding-system%7Cqualification-code
+Accept: application/json
+Authorization: Bearer AVh9Oon9LVxA2SCYp5EkZbyzrQD6
+
+###
+GET https://data.cms.gov/data-api/v1/dataset/02c0692d-e2d9-4714-80c7-a1d16d72ec66/data

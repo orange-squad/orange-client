@@ -4,6 +4,7 @@ import SignUp from './routes/SignUp'
 import SignIn from './routes/SignIn'
 import SignOut from './routes/SignOut'
 import Alert from './components/Alert'
+import Search from './routes/Search'
 
 const App = () => {
   const [user, setUser] = useState(null)
@@ -22,12 +23,8 @@ const App = () => {
 
   return (
     <div>
-      {/* {user ? `Hello ${user.email}!` : ''} */}
-      <SignUp setUser={setUser} createAlert={createAlert} />
-      <SignIn setUser={setUser} createAlert={createAlert} />
-      <SignOut user={user} setUser={setUser} createAlert={createAlert} />
-
-      {alerts.map((alert) => (
+      <Search />
+      {/* {alerts.map((alert) => (
         <Alert
           key={alert.id}
           message={alert.message}
@@ -35,7 +32,7 @@ const App = () => {
           id={alert.id}
           removeAlert={removeAlert}
         />
-      ))}
+      ))} */}
     </div>
   )
 }
