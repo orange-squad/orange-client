@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import ProviderCard from './ProviderCard'
+import ProviderCard from '../components/ProviderCard'
 import CardColumns from 'react-bootstrap/CardColumns'
 import { Container } from 'react-bootstrap'
-import SearchForm from './SearchForm'
+import SearchForm from '../components/SearchForm'
 
 const Search = () => {
   const [searchResults, setSearchResults] = useState([])

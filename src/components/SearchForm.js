@@ -60,19 +60,6 @@ const SearchForm = ({ setSearchResults }) => {
           onChange={(e) => setCity(e.target.value)}
           placeholder='Enter City'
         />
-        <input
-          type='text'
-          value={USState}
-          onChange={(e) => setUSState(e.target.value)}
-          placeholder='Enter State'
-        />
-        <input
-          type='text'
-          value={taxonomy}
-          onChange={(e) => setTaxonomy(e.target.value)}
-          placeholder='Enter Taxonomy'
-        />
-
         <button type='submit'>Search</button>
       </form>
     </Container>

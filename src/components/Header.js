@@ -1,7 +1,16 @@
 import React from 'react'
+import { NavLink, Link } from 'react-router-dom'
+import { Nav, Navbar, Button } from 'react-bootstrap'
 
-const Header = (props) => {
-  return <header>Header!</header>
+export default function Header() {
+  return (
+    <Navbar bg='primary'>
+      <Navbar.Brand as={NavLink} to='/'>
+        Therapist Finder
+      </Navbar.Brand>
+      <Nav>
+        <Button variant='outline-light'>Need Help Now?</Button>
+      </Nav>
+    </Navbar>
+  )
 }
-
-export default Header
