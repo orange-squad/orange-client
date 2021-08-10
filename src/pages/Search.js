@@ -1,21 +1,27 @@
 import React, { useState } from 'react'
 import ProviderCard from '../components/ProviderCard'
 import CardColumns from 'react-bootstrap/CardColumns'
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import SearchForm from '../components/SearchForm'
+import Sidebar from '../components/Sidebar'
 
-const Search = () => {
-  const [searchResults, setSearchResults] = useState([])
-
+const Search = ({ results, setResults }) => {
   return (
-    <Container>
-      <SearchForm setSearchResults={setSearchResults} />
-      <CardColumns>
-        {searchResults &&
-          searchResults.map((result) => {
-            return <ProviderCard data={result} key={result.number} />
-          })}
-      </CardColumns>
+    <Container fluid>
+      <Row>
+        <Col>
+          <Sidebar />
+        </Col>
+        <Col>
+          <SearchForm setResults={setResults} />
+          <CardColumns>
+            {results &&
+              results.map((result) => {
+                return <ProviderCard data={result} key={result.number} />
+              })}
+          </CardColumns>
+        </Col>
+      </Row>
     </Container>
   )
 }

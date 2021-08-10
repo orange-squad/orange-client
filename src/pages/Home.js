@@ -15,11 +15,11 @@ import image from '../assets/image.svg'
 import hero from '../assets/hero-image.jpeg'
 import SearchForm from '../components/SearchForm'
 
-export default function Home() {
+export default function Home({ setResults }) {
   return (
     <Container fluid>
       <Jumbotron fluid>
-        <SearchForm />
+        <SearchForm setSearchResults={setResults} />
         {/* <Container><Image src={hero} fluid /></Container> */}
       </Jumbotron>
       {/* <Carousel> */}

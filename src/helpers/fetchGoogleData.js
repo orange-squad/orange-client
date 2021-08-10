@@ -7,6 +7,11 @@ export async function getPlaceId(npiResults) {
     // fetch google place search data for each provider
     const responseData = await fetch(
       `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&inputtype=textquery&fields=place_id,rating,user_ratings_total&input=${provider.basic.first_name}%20${provider.basic.last_name}`
+      // {
+      //   headers: {
+      //     'Access-Control-Allow-Origin': '*',
+      //   },
+      // }
     )
     const response = await responseData.json()
 

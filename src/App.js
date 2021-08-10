@@ -8,21 +8,22 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 
 const App = () => {
+  const [results, setResults] = useState([])
   return (
     <>
       <Header />
       <Container>
         <Route exact path='/'>
-          <Home />
+          <Home setResults={setResults} />
         </Route>
 
         <Route path='/search'>
-          <Search />
+          <Search results={results} setResults={setResults} />
         </Route>
 
-        <Route path='/provider/:id'>
+        {/* <Route path='/provider/:id'>
           <Provider />
-        </Route>
+        </Route> */}
       </Container>
       <Footer />
     </>
