@@ -1,24 +1,12 @@
 import React, { useState } from 'react'
-import Search from './routes/Search'
+import Search from './components/Search'
+import { Container } from 'react-bootstrap'
 
 const App = () => {
-  // const [alerts, setAlerts] = useState([])
-
-  // const createAlert = ({ message, variant }) => {
-  //   const id = uuid()
-  //   setAlerts((prev) => [...prev, { message, variant, id }])
-  // }
-
-  // const removeAlert = ({ id }) => {
-  //   setAlerts((prev) => {
-  //     prev.filter((alert) => alert.id !== id)
-  //   })
-  // }
-
   return (
-    <div>
+    <Container>
       <Search />
-    </div>
+    </Container>
   )
 }
 

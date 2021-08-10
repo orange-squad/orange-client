@@ -67,3 +67,14 @@ GET https://maps.googleapis.com/maps/api/place/details/json?key=[API_KEY]&place_
 
 ## Quick Reference
 - [React-Bootstrap Cards](https://react-bootstrap.github.io/components/cards/)
+
+
+## File Structure
+📁 /src
+- 📁 /assets
+- 📁 /components
+  - 📰 ProviderCard
+- 📁 /pages
+  - 📰 Home
+  - 📰 Search
+  - 📰 Details
