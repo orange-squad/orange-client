@@ -9,28 +9,33 @@ import {
   Carousel,
   InputGroup,
   FormControl,
+  Jumbotron,
 } from 'react-bootstrap'
 import image from '../assets/image.svg'
 import hero from '../assets/hero-image.jpeg'
+import SearchForm from '../components/SearchForm'
 
 export default function Home() {
   return (
-    <Container>
-      <Carousel>
-        {/* <Carousel.Item> */}
-        <Image src={hero} fluid />
-        <Carousel.Caption>
-          <InputGroup>
+    <Container fluid>
+      <Jumbotron fluid>
+        <SearchForm />
+        {/* <Container><Image src={hero} fluid /></Container> */}
+      </Jumbotron>
+      {/* <Carousel> */}
+      {/* <Carousel.Item> */}
+      {/* <Carousel.Caption> */}
+      {/* <InputGroup>
             <FormControl placeholder='Search City'></FormControl>
             <Button>Search</Button>
-          </InputGroup>
-        </Carousel.Caption>
-        {/* </Carousel.Item> */}
-      </Carousel>
+          </InputGroup> */}
+      {/* </Carousel.Caption> */}
+      {/* </Carousel.Item> */}
+      {/* </Carousel> */}
       <Row>
         <Col>
           <Card>
-            {/* <Card.Img variant='top' src={image} text-muted /> */}
+            {/* <Card.Img variant='top' src={image} thumbnail /> */}
             <Card.Header>Image!</Card.Header>
             <Card.Body>
               <Card.Title>Card Title</Card.Title>

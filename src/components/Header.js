@@ -4,7 +4,7 @@ import { Nav, Navbar, Button } from 'react-bootstrap'
 
 export default function Header() {
   return (
-    <Navbar bg='primary'>
+    <Navbar bg='primary' variant='dark'>
       <Navbar.Brand as={NavLink} to='/'>
         Therapist Finder
       </Navbar.Brand>

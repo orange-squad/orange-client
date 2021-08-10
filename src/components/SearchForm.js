@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { Container } from 'react-bootstrap'
+import {
+  Container,
+  InputGroup,
+  Button,
+  FormControl,
+  Form,
+} from 'react-bootstrap'
 import { getPlaceId } from '../helpers/fetchGoogleData'
 
 const SearchForm = ({ setSearchResults }) => {
@@ -53,15 +59,17 @@ const SearchForm = ({ setSearchResults }) => {
 
   return (
     <Container>
-      <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          placeholder='Enter City'
-        />
-        <button type='submit'>Search</button>
-      </form>
+      <Form onSubmit={handleSubmit}>
+        <InputGroup>
+          <FormControl
+            type='text'
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+            placeholder='Enter City'
+          />
+          <Button type='submit'>Search</Button>
+        </InputGroup>
+      </Form>
     </Container>
   )
 }
