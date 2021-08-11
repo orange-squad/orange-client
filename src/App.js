@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Search from './pages/Search'
 import Home from './pages/Home'
@@ -15,26 +15,27 @@ const App = () => {
     <>
       <Header />
       <Container>
-        <Route exact path='/'>
-          <Home
-            setResults={setResults}
-            loading={loading}
-            setLoading={setLoading}
-          />
-        </Route>
+        <Switch>
+          <Route path='/search'>
+            <Search
+              results={results}
+              setResults={setResults}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          </Route>
 
-        <Route path='/search'>
-          <Search
-            results={results}
-            setResults={setResults}
-            loading={loading}
-            setLoading={setLoading}
-          />
-        </Route>
-
-        <Route path='/provider/:id'>
-          <Provider results={results} />
-        </Route>
+          <Route path='/provider/:id'>
+            <Provider results={results} />
+          </Route>
+          <Route path='/'>
+            <Home
+              setResults={setResults}
+              loading={loading}
+              setLoading={setLoading}
+            />
+          </Route>
+        </Switch>
       </Container>
       <Footer />
     </>
