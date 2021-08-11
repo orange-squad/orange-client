@@ -5,7 +5,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import SearchForm from '../components/SearchForm'
 import Sidebar from '../components/Sidebar'
 
-const Search = ({ results, setResults }) => {
+const Search = ({ results, setResults, loading, setLoading }) => {
   const [displayedResults, setDisplayedResults] = useState(results)
   useEffect(() => {
     setDisplayedResults(results)
@@ -17,7 +17,11 @@ const Search = ({ results, setResults }) => {
           <Sidebar />
         </Col>
         <Col>
-          <SearchForm setResults={setResults} />
+          <SearchForm
+            setResults={setResults}
+            loading={loading}
+            setLoading={setLoading}
+          />
 
           <CardColumns>
             {displayedResults &&

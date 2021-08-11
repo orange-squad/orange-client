@@ -9,17 +9,27 @@ import Footer from './components/Footer'
 
 const App = () => {
   const [results, setResults] = useState([])
+  const [loading, setLoading] = useState(false)
 
   return (
     <>
       <Header />
       <Container>
         <Route exact path='/'>
-          <Home setResults={setResults} />
+          <Home
+            setResults={setResults}
+            loading={loading}
+            setLoading={setLoading}
+          />
         </Route>
 
         <Route path='/search'>
-          <Search results={results} setResults={setResults} />
+          <Search
+            results={results}
+            setResults={setResults}
+            loading={loading}
+            setLoading={setLoading}
+          />
         </Route>
 
         <Route path='/provider/:id'>

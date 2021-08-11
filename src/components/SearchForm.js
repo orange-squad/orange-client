@@ -5,12 +5,13 @@ import {
   Button,
   FormControl,
   Form,
+  Spinner,
 } from 'react-bootstrap'
 import { useLocation, useHistory } from 'react-router-dom'
 
 import { getPlaceId } from '../helpers/fetchGoogleData'
 
-const SearchForm = ({ setResults }) => {
+const SearchForm = ({ setResults, loading, setLoading }) => {
   // TODO: Add pagination?
   const [skip, setSkip] = useState(0)
   const [limit, setLimit] = useState(200)
@@ -46,8 +47,10 @@ const SearchForm = ({ setResults }) => {
 
   let location = useLocation()
   let history = useHistory()
+
   const handleSubmit = async (event) => {
     event.preventDefault()
+    setLoading(true)
     try {
       // fetch care provider data from npi registry via proxy
       const response = await fetch(
@@ -61,6 +64,7 @@ const SearchForm = ({ setResults }) => {
       console.error(error)
     }
     if (location.pathname !== '/search') history.push('/search')
+    setLoading(false)
   }
 
   return (
@@ -73,7 +77,20 @@ const SearchForm = ({ setResults }) => {
             onChange={(e) => setCity(e.target.value)}
             placeholder='Enter City'
           />
-          <Button type='submit'>Search</Button>
+          {loading ? (
+            <Button variant='primary' disabled>
+              <Spinner
+                as='span'
+                animation='border'
+                size='sm'
+                role='status'
+                aria-hidden='true'
+              />
+              Loading...
+            </Button>
+          ) : (
+            <Button type='submit'>Search</Button>
+          )}
         </InputGroup>
       </Form>
     </Container>

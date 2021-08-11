@@ -15,11 +15,15 @@ import image from '../assets/image.svg'
 import hero from '../assets/hero-image.jpeg'
 import SearchForm from '../components/SearchForm'
 
-export default function Home({ setResults }) {
+export default function Home({ setResults, loading, setLoading }) {
   return (
     <Container fluid>
       <Jumbotron fluid>
-        <SearchForm setResults={setResults} />
+        <SearchForm
+          setResults={setResults}
+          loading={loading}
+          setLoading={setLoading}
+        />
       </Jumbotron>
       <Row>
         <Col>
