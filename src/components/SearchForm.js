@@ -6,6 +6,8 @@ import {
   FormControl,
   Form,
 } from 'react-bootstrap'
+import { useLocation, useHistory } from 'react-router-dom'
+
 import { getPlaceId } from '../helpers/fetchGoogleData'
 
 const SearchForm = ({ setResults }) => {
@@ -17,7 +19,7 @@ const SearchForm = ({ setResults }) => {
   const [taxonomy, setTaxonomy] = useState('psych*')
 
   // Search only certain types of addresses: LOCATION, MAILING, PRIMARY, or SECONDARY
-  const [addressType, setAddressType] = useState('')
+  const [addressType, setAddressType] = useState('LOCATION')
   const [city, setCity] = useState('')
 
   //! cannot be used as the only input
@@ -42,6 +44,8 @@ const SearchForm = ({ setResults }) => {
   // When searching by Individual Providers, return providers with similar names
   const [searchAliases, setSearchAliases] = useState(true)
 
+  let location = useLocation()
+  let history = useHistory()
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
@@ -49,17 +53,14 @@ const SearchForm = ({ setResults }) => {
       const response = await fetch(
         `https://sleepy-earth-76653.herokuapp.com/?number=${npiNumber}&enumeration_type=${providerType}&taxonomy_description=${taxonomy}&first_name=${firstName}&use_first_name_alias=${searchAliases}&last_name=${lastName}&organization_name=${organizationName}&address_purpose=${addressType}&city=${city}&state=${USState}&postal_code=${postalCode}&country_code=${countryCode}&limit=${limit}&skip=${skip}&version=2.1&pretty=true`
       )
-      // const response = await fetch('http://localhost:3000/', {
-      //   body: JSON.stringify({
-      //     request_url: `https://npiregistry.cms.hhs.gov/api/?number=${npiNumber}&enumeration_type=${providerType}&taxonomy_description=${taxonomy}&first_name=${firstName}&use_first_name_alias=${searchAliases}&last_name=${lastName}&organization_name=${organizationName}&address_purpose=${addressType}&city=${city}&state=${USState}&postal_code=${postalCode}&country_code=${countryCode}&limit=${limit}&skip=${skip}&version=2.1&pretty=true`,
-      //   }),
-      // })
       const json = await response.json()
-      const finalResults = await getPlaceId(json.results)
-      await setResults(Object.values(finalResults))
+      // const finalResults = await getPlaceId(json.results)
+      // await setResults(Object.values(finalResults))
+      await setResults(json.results)
     } catch (error) {
       console.error(error)
     }
+    if (location.pathname !== '/search') history.push('/search')
   }
 
   return (

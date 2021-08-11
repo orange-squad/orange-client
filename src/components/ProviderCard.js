@@ -15,6 +15,7 @@ const ProviderCard = ({ data }) => {
       })
       .join(' ')
   }
+  // set address as the primary location
   const { address_1, address_2, city, state, postal_code, telephone_number } =
     data.addresses[0]
 

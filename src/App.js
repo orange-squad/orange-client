@@ -9,6 +9,7 @@ import Footer from './components/Footer'
 
 const App = () => {
   const [results, setResults] = useState([])
+
   return (
     <>
       <Header />

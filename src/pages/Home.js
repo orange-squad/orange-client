@@ -19,19 +19,8 @@ export default function Home({ setResults }) {
   return (
     <Container fluid>
       <Jumbotron fluid>
-        <SearchForm setSearchResults={setResults} />
-        {/* <Container><Image src={hero} fluid /></Container> */}
+        <SearchForm setResults={setResults} />
       </Jumbotron>
-      {/* <Carousel> */}
-      {/* <Carousel.Item> */}
-      {/* <Carousel.Caption> */}
-      {/* <InputGroup>
-            <FormControl placeholder='Search City'></FormControl>
-            <Button>Search</Button>
-          </InputGroup> */}
-      {/* </Carousel.Caption> */}
-      {/* </Carousel.Item> */}
-      {/* </Carousel> */}
       <Row>
         <Col>
           <Card>
