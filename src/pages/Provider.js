@@ -1,10 +1,12 @@
 import React from 'react'
-import Card from 'react-bootstrap/Card'
-import { Route, Link } from 'react-router-dom'
-import Provider from '../pages/Provider'
+import { Link, useParams } from 'react-router-dom'
+import { Card, Container } from 'react-bootstrap'
 
-const ProviderCard = ({ data }) => {
-  const { credential, first_name, last_name, gender } = data.basic
+function Provider({ results }) {
+  let { id } = useParams()
+
+  const provider = results.find((provider) => provider.number === parseInt(id))
+  const { credential, first_name, last_name, gender } = provider.basic
 
   function titleCase(str) {
     return str
@@ -17,20 +19,17 @@ const ProviderCard = ({ data }) => {
   }
   // set address as the primary location
   const { address_1, address_2, city, state, postal_code, telephone_number } =
-    data.addresses[0]
+    provider.addresses[0]
 
   return (
-    <>
-      <Card
-        as={Link}
-        to={{ pathname: `/provider/${data.number}` }}
-        style={{ width: '30rem', textDecoration: 'none', color: 'black' }}
-      >
+    <Container>
+      <Link to='/search'>Back to search</Link>
+      <Card>
         <Card.Header>
           <Card.Title>
             {titleCase(first_name)} {titleCase(last_name)} {credential}
           </Card.Title>
-          {data.taxonomies.map((taxonomy, index) => {
+          {provider.taxonomies.map((taxonomy, index) => {
             return (
               <Card.Subtitle key={taxonomy.code + index}>
                 {taxonomy.desc}
@@ -46,11 +45,11 @@ const ProviderCard = ({ data }) => {
           {telephone_number}
         </address>
         <Card.Footer>
-          <Card.Text>NPI Number: {data.number}</Card.Text>
+          <Card.Text>NPI Number: {provider.number}</Card.Text>
         </Card.Footer>
       </Card>
-    </>
+    </Container>
   )
 }
 
-export default ProviderCard
+export default Provider

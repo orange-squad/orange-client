@@ -1,24 +1,33 @@
 import React, { useState } from 'react'
-import Search from './routes/Search'
+import { Route } from 'react-router-dom'
+import { Container } from 'react-bootstrap'
+import Search from './pages/Search'
+import Home from './pages/Home'
+import Provider from './pages/Provider'
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 const App = () => {
-  // const [alerts, setAlerts] = useState([])
-
-  // const createAlert = ({ message, variant }) => {
-  //   const id = uuid()
-  //   setAlerts((prev) => [...prev, { message, variant, id }])
-  // }
-
-  // const removeAlert = ({ id }) => {
-  //   setAlerts((prev) => {
-  //     prev.filter((alert) => alert.id !== id)
-  //   })
-  // }
+  const [results, setResults] = useState([])
 
   return (
-    <div>
-      <Search />
-    </div>
+    <>
+      <Header />
+      <Container>
+        <Route exact path='/'>
+          <Home setResults={setResults} />
+        </Route>
+
+        <Route path='/search'>
+          <Search results={results} setResults={setResults} />
+        </Route>
+
+        <Route path='/provider/:id'>
+          <Provider results={results} />
+        </Route>
+      </Container>
+      <Footer />
+    </>
   )
 }
 

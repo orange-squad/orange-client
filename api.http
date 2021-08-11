@@ -8,7 +8,7 @@ GET https://npiregistry.cms.hhs.gov/api/?number=&enumeration_type=NPI-1&city=Roc
 
 ###
 
-GET https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyBFGv9-hlOIkwuDIwBDBinQVyiKDsFBnrc&inputtype=textquery&fields=place_id,rating,user_ratings_total&input=dmitry%20malkin
+GET https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyBFGv9-hlOIkwuDIwBDBinQVyiKDsFBnrc&inputtype=textquery&fields=place_id,rating,user_ratings_total&input=AKIM%20JONES
 
 ###
-GET https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyBFGv9-hlOIkwuDIwBDBinQVyiKDsFBnrc&place_id=ChIJtY_9lWFYwokRFRUrwJpWr6c&fields=rating,review,user_ratings_total,website
+GET https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyBFGv9-hlOIkwuDIwBDBinQVyiKDsFBnrc&place_id=ChIJtY_9lWFYwokRFRUrwJpWr6c
