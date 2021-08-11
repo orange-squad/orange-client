@@ -13,7 +13,7 @@ import { getPlaceId } from '../helpers/fetchGoogleData'
 const SearchForm = ({ setResults }) => {
   // TODO: Add pagination?
   const [skip, setSkip] = useState(0)
-  const [limit, setLimit] = useState(10)
+  const [limit, setLimit] = useState(200)
 
   // TODO: Pre-set search values?
   const [taxonomy, setTaxonomy] = useState('psych*')

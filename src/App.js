@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Route, useRouteMatch } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Search from './pages/Search'
 import Home from './pages/Home'
@@ -22,9 +22,9 @@ const App = () => {
           <Search results={results} setResults={setResults} />
         </Route>
 
-        {/* <Route path='/provider/:id'>
-          <Provider />
-        </Route> */}
+        <Route path='/provider/:id'>
+          <Provider results={results} />
+        </Route>
       </Container>
       <Footer />
     </>

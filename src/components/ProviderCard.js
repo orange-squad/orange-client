@@ -21,12 +21,9 @@ const ProviderCard = ({ data }) => {
 
   return (
     <>
-      <Route path='/provider/:id'>
-        <Provider data={data} />
-      </Route>
       <Card
         as={Link}
-        to={{ pathname: `/provider/${data.number}`, data: data }}
+        to={{ pathname: `/provider/${data.number}` }}
         style={{ width: '30rem', textDecoration: 'none', color: 'black' }}
       >
         <Card.Header>
