@@ -18,7 +18,7 @@ import SearchForm from '../components/SearchForm'
 export default function Home({ setResults, loading, setLoading }) {
   return (
     <Container fluid>
-      <Jumbotron fluid>
+      <Jumbotron style={{marginBottom: '20px'}} fluid>
         <SearchForm
           setResults={setResults}
           loading={loading}
@@ -29,13 +29,12 @@ export default function Home({ setResults, loading, setLoading }) {
         <Col>
           <Card>
             {/* <Card.Img variant='top' src={image} thumbnail /> */}
-            <Card.Header>Image!</Card.Header>
+            <Card.Img variant="top" src="https://thehill.com/sites/default/files/styles/thumb_small_article/public/bilessimone_080121getty.jpg?itok=W8rU_5ew" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle>I made a thing</Card.Subtitle>
+              <Card.Title>How athletes taking a stand on mental health could help the nation's mothers
+              </Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+                We’ve witnessed tremendous courage in the face of mental health challenges on the part of elite athletes recently.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -43,13 +42,11 @@ export default function Home({ setResults, loading, setLoading }) {
         <Col>
           <Card>
             {/* <Card.Img variant='top' src={image} text-muted /> */}
-            <Card.Header>Image!</Card.Header>
+            <Card.Img variant="top" src="https://static01.nyt.com/images/2019/09/09/smarter-living/09sl-mentalillness/00sl-mentalillness-superJumbo.jpg?quality=90&auto=webp" />
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle>I made a thing</Card.Subtitle>
+              <Card.Title>How to Manage Your Mental Illness at Work</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+              If you suffer from depression, anxiety, PTSD or another mental illness, here are some real-world tips to help you stay happy and healthy at work.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -57,13 +54,11 @@ export default function Home({ setResults, loading, setLoading }) {
         <Col>
           <Card>
             {/* <Card.Img variant='top' src={image} text-muted /> */}
-            <Card.Header>Image!</Card.Header>
+            <Card.Img variant="top" src="https://static01.nyt.com/images/2019/01/22/well/family/music-braunstein/music-braunstein-jumbo.jpg?quality=90&auto=webp"/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle>I made a thing</Card.Subtitle>
+              <Card.Title>Fighting the Stigma of Mental Illness Through Music</Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+              An orchestra in which musicians are dealing with mental health issues is working to harness the healing power of music.
               </Card.Text>
             </Card.Body>
           </Card>
@@ -71,13 +66,12 @@ export default function Home({ setResults, loading, setLoading }) {
         <Col>
           <Card>
             {/* <Card.Img variant='top' src={image} text-muted /> */}
-            <Card.Header>Image!</Card.Header>
+            <Card.Img variant="top" src="https://static01.nyt.com/images/2020/02/10/well/00well-stigma/00well-stigma-jumbo.jpg?quality=90&auto=webp"/>
             <Card.Body>
-              <Card.Title>Card Title</Card.Title>
-              <Card.Subtitle>I made a thing</Card.Subtitle>
+              <Card.Title>The Extra Stigma of Mental Illness for African-Americans
+              </Card.Title>
               <Card.Text>
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
+              In my Black community, therapy was stigmatized as something for people who could not handle challenges.
               </Card.Text>
             </Card.Body>
           </Card>
