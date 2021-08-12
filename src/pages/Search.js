@@ -10,11 +10,16 @@ const Search = ({ results, setResults, loading, setLoading }) => {
   useEffect(() => {
     setDisplayedResults(results)
   }, [results])
+
   return (
     <Container fluid>
       <Row>
         <Col>
-          <Sidebar />
+          <Sidebar
+            setDisplayedResults={setDisplayedResults}
+            displayedResults={displayedResults}
+            results={results}
+          />
         </Col>
         <Col>
           <SearchForm

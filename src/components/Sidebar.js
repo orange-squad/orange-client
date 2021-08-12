@@ -1,35 +1,28 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Form, Container, Button } from 'react-bootstrap'
+import FilterButton from './FilterButton'
+const FILTER_MAP = {
+  All: () => true,
+  Female: (provider) => provider.basic.gender === 'F',
+  Male: (provider) => provider.basic.gender === 'M',
+}
 
-function Sidebar() {
-  return (
-    <Container fluid>
-      <Form>
-        Filter by:
-        <Form.Group>
-          <Form.Text>Gender</Form.Text>
-          <Form.Check type='checkbox' label='Female' />
-          <Form.Check type='checkbox' label='Male' />
-        </Form.Group>
-        <Form.Group>
-          <Form.Text>Specialties</Form.Text>
-          <Form.Check type='checkbox' label='Psychiatrist' />
-          <Form.Check type='checkbox' label='Psychologist' />
-          <Form.Check type='checkbox' label='Therapist' />
-          <Form.Check type='checkbox' label='Counselor' />
-          <Form.Check type='checkbox' label='Unicorn' />
-        </Form.Group>
-        <Form.Group>
-          <Form.Text>Insurance</Form.Text>
-          <Form.Check type='checkbox' label='Blue Cross Blue Shield' />
-          <Form.Check type='checkbox' label='Emblem Health' />
-          <Form.Check type='checkbox' label='United Healthcare' />
-          <Form.Check type='checkbox' label='Medicare' />
-          <Form.Check type='checkbox' label='Medicaid' />
-        </Form.Group>
-      </Form>
-    </Container>
-  )
+const FILTER_NAMES = Object.keys(FILTER_MAP)
+
+function Sidebar({ results, setDisplayedResults }) {
+  const [filter, setFilter] = useState('All')
+  useEffect(() => {
+    setDisplayedResults(results.filter(FILTER_MAP[filter]))
+  }, [results, filter, setDisplayedResults])
+  const filterList = FILTER_NAMES.map((name) => (
+    <FilterButton
+      key={name}
+      name={name}
+      isPressed={name === filter}
+      setFilter={setFilter}
+    />
+  ))
+  return <Container fluid>{filterList}</Container>
 }
 
 export default Sidebar
