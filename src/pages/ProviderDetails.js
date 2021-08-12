@@ -1,22 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Card, Container } from 'react-bootstrap'
+import { getPlaceDetails } from '../helpers/fetchGoogleData'
+import { titleCase } from './../helpers/textFormatting'
 
 function ProviderDetails({ results }) {
   let { id } = useParams()
 
-  const provider = results.find((provider) => provider.number === parseInt(id))
+  let provider = results.find((provider) => provider.number === parseInt(id))
+
+  // provider = getPlaceDetails(provider)
+
   const { credential, first_name, last_name, gender } = provider.basic
 
-  function titleCase(str) {
-    return str
-      .toLowerCase()
-      .split(' ')
-      .map(function (word) {
-        return word.charAt(0).toUpperCase() + word.slice(1)
-      })
-      .join(' ')
-  }
   // set address as the primary location
   const { address_1, address_2, city, state, postal_code, telephone_number } =
     provider.addresses[0]

@@ -14,7 +14,7 @@ const Search = ({ results, setResults, loading, setLoading }) => {
   return (
     <Container fluid>
       <Row>
-        <Col>
+        <Col lg='2'>
           <Sidebar
             setDisplayedResults={setDisplayedResults}
             displayedResults={displayedResults}
@@ -28,12 +28,10 @@ const Search = ({ results, setResults, loading, setLoading }) => {
             setLoading={setLoading}
           />
 
-          <CardColumns>
-            {displayedResults &&
-              displayedResults.map((provider) => {
-                return <ProviderCard data={provider} key={provider.number} />
-              })}
-          </CardColumns>
+          {displayedResults &&
+            displayedResults.map((provider) => {
+              return <ProviderCard data={provider} key={provider.number} />
+            })}
         </Col>
       </Row>
     </Container>

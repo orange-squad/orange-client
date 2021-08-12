@@ -19,3 +19,15 @@ export async function getPlaceId(npiResults) {
   })
   return searchResults
 }
+
+export async function getPlaceDetails(provider) {
+  const responseData = await fetch(
+    `http://orange-proxy-server.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&place_id=${provider.placeId}`
+  )
+  const response = await responseData.json()
+  if (response.status === 'OK') {
+    provider.reviews = response.result.reviews
+    provider.website = response.result.website
+  }
+  return provider
+}

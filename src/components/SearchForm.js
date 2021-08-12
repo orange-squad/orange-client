@@ -68,7 +68,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
   }
 
   return (
-    <Container>
+    <>
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <FormControl
@@ -78,22 +78,24 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
             placeholder='Enter City'
           />
           {loading ? (
-            <Button variant='primary' disabled>
+            <Button variant='secondary' disabled>
               <Spinner
                 as='span'
                 animation='border'
                 size='sm'
                 role='status'
                 aria-hidden='true'
-              />
+              />{' '}
               Loading...
             </Button>
           ) : (
-            <Button type='submit'>Search</Button>
+            <Button variant='secondary' type='submit'>
+              Search
+            </Button>
           )}
         </InputGroup>
       </Form>
-    </Container>
+    </>
   )
 }
 
