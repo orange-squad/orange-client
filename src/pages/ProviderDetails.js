@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Card, Container } from 'react-bootstrap'
 
-function Provider({ results }) {
+function ProviderDetails({ results }) {
   let { id } = useParams()
 
   const provider = results.find((provider) => provider.number === parseInt(id))
@@ -37,7 +37,7 @@ function Provider({ results }) {
             )
           })}
         </Card.Header>
-        <Card.Text>Rating:{provider?.rating}/5</Card.Text>
+
         <address>
           {address_1}
           {address_2}
@@ -52,4 +52,4 @@ function Provider({ results }) {
   )
 }
 
-export default Provider
+export default ProviderDetails
