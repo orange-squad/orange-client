@@ -12,14 +12,7 @@ const ProviderCard = ({ data }) => {
   const { rating, user_ratings_total } = data
 
   return (
-    <Card
-      as={Link}
-      to={{ pathname: `/provider/${data.number}` }}
-      style={{
-        width: '18rem',
-      }}
-      className='provider-grid'
-    >
+    <Card as={Link} to={{ pathname: `/provider/${data.number}` }}>
       <Card.Header>
         <Card.Title>
           {titleCase(first_name)} {titleCase(last_name)} {credential}

@@ -5,7 +5,8 @@ export default function HelpButton() {
       variant='outline-light'
       style={{ whiteSpace: 'nowrap' }}
       href='https://suicidepreventionlifeline.org/talk-to-someone-now/'
-      target="_blank"
+      target='_blank'
+      className='help-button'
     >
       <svg
         xmlns='http://www.w3.org/2000/svg'

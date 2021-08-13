@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Jumbotron, Media, Button } from 'react-bootstrap'
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap'
 import SearchForm from '../components/SearchForm'
 import ArticleCard from '../components/ArticleCard'
 import TeamCard from '../components/TeamCard'
@@ -19,7 +19,7 @@ export default function Home({ setResults, loading, setLoading }) {
       <Container>
         <Row>
           <h2>Trending Articles</h2>
-          <Col>
+          <Col lg>
             <ArticleCard
               title='How Athletes Taking a Stand on Mental Health Could Help the
           Nation’s Mothers'
@@ -30,7 +30,7 @@ export default function Home({ setResults, loading, setLoading }) {
               author='The Hill'
             />
           </Col>
-          <Col>
+          <Col lg>
             <ArticleCard
               title='How to Manage Your Mental Illness at Work'
               image='https://static01.nyt.com/images/2019/09/09/smarter-living/09sl-mentalillness/00sl-mentalillness-superJumbo.jpg?quality=90&auto=webp'
@@ -41,7 +41,7 @@ export default function Home({ setResults, loading, setLoading }) {
               author='The New York Times'
             />
           </Col>
-          <Col>
+          <Col lg>
             <ArticleCard
               title='Fighting the Stigma of Mental Illness Through Music'
               image='https://static01.nyt.com/images/2019/01/22/well/family/music-braunstein/music-braunstein-jumbo.jpg?quality=90&auto=webp'
@@ -51,7 +51,7 @@ export default function Home({ setResults, loading, setLoading }) {
               author='The New York Times'
             />
           </Col>
-          <Col>
+          <Col lg>
             <ArticleCard
               title='The Extra Stigma of Mental Illness for African-Americans'
               image='https://static01.nyt.com/images/2020/02/10/well/00well-stigma/00well-stigma-jumbo.jpg?quality=90&auto=webp'
@@ -65,7 +65,7 @@ export default function Home({ setResults, loading, setLoading }) {
       </Container>
       <Container>
         <Row>
-          <Col>
+          <Col lg='3'>
             <h2>News</h2>
             <ArticleCard
               title='How Do I Know if I Have Adult A.D.H.D.?'
@@ -100,7 +100,7 @@ export default function Home({ setResults, loading, setLoading }) {
               author='The New York Times'
             />
           </Col>
-          <Col>
+          <Col lg='3'>
             <h2>The Team</h2>
             <h3>SEI</h3>
             <TeamCard
@@ -119,9 +119,18 @@ export default function Home({ setResults, loading, setLoading }) {
               url='https://github.com/amaliaroye'
             />
             <h3>UX/UI</h3>
-            <TeamCard name='Romani Poole' />
-            <TeamCard name='Deepika Mohanty' />
-            <TeamCard name='Katherine Gomez' />
+            <TeamCard
+              name='Romani Poole'
+              image='https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg'
+            />
+            <TeamCard
+              name='Deepika Mohanty'
+              image='https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg'
+            />
+            <TeamCard
+              name='Katherine Gomez'
+              image='https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg'
+            />
           </Col>
         </Row>
       </Container>

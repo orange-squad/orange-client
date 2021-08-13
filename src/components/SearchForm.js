@@ -60,7 +60,6 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
       // get google data
       const finalResults = await getPlaceId(json.results)
       await setResults(Object.values(finalResults))
-      // await setResults(json.results)
     } catch (error) {
       console.error(error)
     }
