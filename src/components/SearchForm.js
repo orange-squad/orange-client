@@ -20,7 +20,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
   const [taxonomy, setTaxonomy] = useState('psych*')
 
   // Search only certain types of addresses: LOCATION, MAILING, PRIMARY, or SECONDARY
-  const [addressType, setAddressType] = useState('LOCATION')
+  const [addressType, setAddressType] = useState('')
   const [city, setCity] = useState('')
 
   //! cannot be used as the only input
@@ -57,6 +57,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
         `https://orange-proxy-server.herokuapp.com/https://npiregistry.cms.hhs.gov/api/?number=${npiNumber}&enumeration_type=${providerType}&taxonomy_description=${taxonomy}&first_name=${firstName}&use_first_name_alias=${searchAliases}&last_name=${lastName}&organization_name=${organizationName}&address_purpose=${addressType}&city=${city}&state=${USState}&postal_code=${postalCode}&country_code=${countryCode}&limit=${limit}&skip=${skip}&version=2.1&pretty=true`
       )
       const json = await response.json()
+      // get google data
       const finalResults = await getPlaceId(json.results)
       await setResults(Object.values(finalResults))
       // await setResults(json.results)

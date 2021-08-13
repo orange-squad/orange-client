@@ -11,9 +11,11 @@ const FILTER_NAMES = Object.keys(FILTER_MAP)
 
 function Sidebar({ results, setDisplayedResults }) {
   const [filter, setFilter] = useState('All')
+
   useEffect(() => {
     setDisplayedResults(results.filter(FILTER_MAP[filter]))
   }, [results, filter, setDisplayedResults])
+
   const filterList = FILTER_NAMES.map((name) => (
     <FilterButton
       key={name}
@@ -22,6 +24,7 @@ function Sidebar({ results, setDisplayedResults }) {
       setFilter={setFilter}
     />
   ))
+
   return <Container fluid>{filterList}</Container>
 }
 

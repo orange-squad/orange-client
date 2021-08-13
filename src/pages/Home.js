@@ -27,6 +27,7 @@ export default function Home({ setResults, loading, setLoading }) {
               image='https://thehill.com/sites/default/files/styles/thumb_small_article/public/bilessimone_080121getty.jpg?itok=W8rU_5ew'
               text='We’ve witnessed tremendous courage in the face of mental health
             challenges on the part of elite athletes recently.'
+              url='https://thehill.com/blogs/congress-blog/healthcare/567478-how-athletes-taking-a-stand-on-mental-health-could-help-the?rl=1'
             />
           </Col>
           <Col>

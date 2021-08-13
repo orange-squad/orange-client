@@ -7,6 +7,7 @@ import Sidebar from '../components/Sidebar'
 
 const Search = ({ results, setResults, loading, setLoading }) => {
   const [displayedResults, setDisplayedResults] = useState(results)
+
   useEffect(() => {
     setDisplayedResults(results)
   }, [results])

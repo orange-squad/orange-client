@@ -17,10 +17,8 @@ const ProviderCard = ({ data }) => {
       to={{ pathname: `/provider/${data.number}` }}
       style={{
         width: '18rem',
-        textDecoration: 'none',
-        color: 'black',
       }}
-      className='mb-2'
+      className='provider-grid'
     >
       <Card.Header>
         <Card.Title>
@@ -37,11 +35,9 @@ const ProviderCard = ({ data }) => {
         <Card.Subtitle>Address: </Card.Subtitle>
         <address>
           {address_1}
-          <Card.Text>{address_2}</Card.Text>
-          <Card.Text>
-            {city} {state} {postal_code}
-          </Card.Text>
-          <Card.Text>{telephone_number}</Card.Text>
+          {address_2}
+          {city} {state} {postal_code}
+          {telephone_number}
         </address>
         {user_ratings_total > 0 && (
           <>

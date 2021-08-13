@@ -2,7 +2,7 @@ import { Card } from 'react-bootstrap'
 
 export default function ArticleCard({ url, title, author, image, text }) {
   return (
-    <Card style={{ border: 'none' }}>
+    <Card as='a' href={url} style={{ border: 'none' }}>
       <Card.Img variant='top' src={image} style={{ borderRadius: '8px' }} />
       <Card.Body>
         <Card.Title
