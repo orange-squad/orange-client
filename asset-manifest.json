@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/orange-client/static/css/main.2f2c8aa4.chunk.css",
-    "main.js": "/orange-client/static/js/main.4c4c4906.chunk.js",
-    "main.js.map": "/orange-client/static/js/main.4c4c4906.chunk.js.map",
+    "main.js": "/orange-client/static/js/main.3e89ad54.chunk.js",
+    "main.js.map": "/orange-client/static/js/main.3e89ad54.chunk.js.map",
     "runtime-main.js": "/orange-client/static/js/runtime-main.87d5d412.js",
     "runtime-main.js.map": "/orange-client/static/js/runtime-main.87d5d412.js.map",
     "static/js/2.c12c1e87.chunk.js": "/orange-client/static/js/2.c12c1e87.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.87d5d412.js",
     "static/js/2.c12c1e87.chunk.js",
     "static/css/main.2f2c8aa4.chunk.css",
-    "static/js/main.4c4c4906.chunk.js"
+    "static/js/main.3e89ad54.chunk.js"
   ]
 }
