@@ -28,7 +28,7 @@ export default function Home({ setResults, loading, setLoading }) {
       </Jumbotron>
       <Row>
         <Col>
-          <a href="https://thehill.com/blogs/congress-blog/healthcare/567478-how-athletes-taking-a-stand-on-mental-health-could-help-the?rl=1" target="_blank" rel="noreferrer">
+          <a href="https://thehill.com/blogs/congress-blog/healthcare/567478-how-athletes-taking-a-stand-on-mental-health-could-help-the?rl=1" target="_blank" rel="noreferrer" style={{textDecoration: 'none'}}>
           <Card>
             {/* <Card.Img variant='top' src={image} thumbnail /> */}
             <Card.Img variant="top" src="https://thehill.com/sites/default/files/styles/thumb_small_article/public/bilessimone_080121getty.jpg?itok=W8rU_5ew" target="_blank" />
