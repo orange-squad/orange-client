@@ -6,12 +6,7 @@ export async function getPlaceId(npiResults) {
 
     // fetch google place search data for each provider
     const responseData = await fetch(
-      `https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&inputtype=textquery&fields=place_id,rating,user_ratings_total&input=${provider.basic.first_name}%20${provider.basic.last_name}`
-      // {
-      //   headers: {
-      //     'Access-Control-Allow-Origin': '*',
-      //   },
-      // }
+      `http://orange-proxy-server.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&inputtype=textquery&fields=place_id,rating,user_ratings_total&input=${provider.basic.first_name}%20${provider.basic.last_name}`
     )
     const response = await responseData.json()
 
@@ -23,4 +18,16 @@ export async function getPlaceId(npiResults) {
     }
   })
   return searchResults
+}
+
+export async function getPlaceDetails(provider) {
+  const responseData = await fetch(
+    `http://orange-proxy-server.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&place_id=${provider.placeId}`
+  )
+  const response = await responseData.json()
+  if (response.status === 'OK') {
+    provider.reviews = response.result.reviews
+    provider.website = response.result.website
+  }
+  return provider
 }

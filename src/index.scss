@@ -1,23 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,700;1,400&display=swap');
 
-// $theme-colors: (
-//   'primary': #a3653d,
-//   'secondary': #bc9349,
-//   'info': #f67640,
-// );
 $primary: #a3653d;
 $secondary: #bc9349;
 $info: #f67640;
 
+@import '~bootstrap/scss/bootstrap';
+
 * {
   font-family: 'Josefin Sans', sans-serif;
 }
+
 .jumbotron {
+  overflow: hidden;
   background-image: url('assets/hero-image.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 10rem 2rem;
+  min-height: 40vh;
+  padding: 10rem 5rem;
+  color: white;
+  margin-bottom: 2rem;
 }
 
-@import '~bootstrap/scss/bootstrap';
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -14,13 +14,13 @@ import { getPlaceId } from '../helpers/fetchGoogleData'
 const SearchForm = ({ setResults, loading, setLoading }) => {
   // TODO: Add pagination?
   const [skip, setSkip] = useState(0)
-  const [limit, setLimit] = useState(200)
+  const [limit, setLimit] = useState(50)
 
   // TODO: Pre-set search values?
   const [taxonomy, setTaxonomy] = useState('psych*')
 
   // Search only certain types of addresses: LOCATION, MAILING, PRIMARY, or SECONDARY
-  const [addressType, setAddressType] = useState('LOCATION')
+  const [addressType, setAddressType] = useState('')
   const [city, setCity] = useState('')
 
   //! cannot be used as the only input
@@ -54,12 +54,13 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
     try {
       // fetch care provider data from npi registry via proxy
       const response = await fetch(
-        `https://sleepy-earth-76653.herokuapp.com/?number=${npiNumber}&enumeration_type=${providerType}&taxonomy_description=${taxonomy}&first_name=${firstName}&use_first_name_alias=${searchAliases}&last_name=${lastName}&organization_name=${organizationName}&address_purpose=${addressType}&city=${city}&state=${USState}&postal_code=${postalCode}&country_code=${countryCode}&limit=${limit}&skip=${skip}&version=2.1&pretty=true`
+        `https://orange-proxy-server.herokuapp.com/https://npiregistry.cms.hhs.gov/api/?number=${npiNumber}&enumeration_type=${providerType}&taxonomy_description=${taxonomy}&first_name=${firstName}&use_first_name_alias=${searchAliases}&last_name=${lastName}&organization_name=${organizationName}&address_purpose=${addressType}&city=${city}&state=${USState}&postal_code=${postalCode}&country_code=${countryCode}&limit=${limit}&skip=${skip}&version=2.1&pretty=true`
       )
       const json = await response.json()
-      // const finalResults = await getPlaceId(json.results)
-      // await setResults(Object.values(finalResults))
-      await setResults(json.results)
+      // get google data
+      const finalResults = await getPlaceId(json.results)
+      await setResults(Object.values(finalResults))
+      // await setResults(json.results)
     } catch (error) {
       console.error(error)
     }
@@ -68,7 +69,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
   }
 
   return (
-    <Container>
+    <>
       <Form onSubmit={handleSubmit}>
         <InputGroup>
           <FormControl
@@ -78,22 +79,24 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
             placeholder='Enter City'
           />
           {loading ? (
-            <Button variant='primary' disabled>
+            <Button variant='secondary' disabled>
               <Spinner
                 as='span'
                 animation='border'
                 size='sm'
                 role='status'
                 aria-hidden='true'
-              />
+              />{' '}
               Loading...
             </Button>
           ) : (
-            <Button type='submit'>Search</Button>
+            <Button variant='secondary' type='submit'>
+              Search
+            </Button>
           )}
         </InputGroup>
       </Form>
-    </Container>
+    </>
   )
 }
 

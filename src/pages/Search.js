@@ -7,14 +7,20 @@ import Sidebar from '../components/Sidebar'
 
 const Search = ({ results, setResults, loading, setLoading }) => {
   const [displayedResults, setDisplayedResults] = useState(results)
+
   useEffect(() => {
     setDisplayedResults(results)
   }, [results])
+
   return (
     <Container fluid>
       <Row>
-        <Col>
-          <Sidebar />
+        <Col lg='2'>
+          <Sidebar
+            setDisplayedResults={setDisplayedResults}
+            displayedResults={displayedResults}
+            results={results}
+          />
         </Col>
         <Col>
           <SearchForm
@@ -23,12 +29,10 @@ const Search = ({ results, setResults, loading, setLoading }) => {
             setLoading={setLoading}
           />
 
-          <CardColumns>
-            {displayedResults &&
-              displayedResults.map((provider) => {
-                return <ProviderCard data={provider} key={provider.number} />
-              })}
-          </CardColumns>
+          {displayedResults &&
+            displayedResults.map((provider) => {
+              return <ProviderCard data={provider} key={provider.number} />
+            })}
         </Col>
       </Row>
     </Container>

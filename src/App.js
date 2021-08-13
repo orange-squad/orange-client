@@ -3,9 +3,9 @@ import { Route, Switch } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Search from './pages/Search'
 import Home from './pages/Home'
-import Provider from './pages/Provider'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import ProviderDetails from './pages/ProviderDetails'
 
 const App = () => {
   const [results, setResults] = useState([])
@@ -14,29 +14,27 @@ const App = () => {
   return (
     <>
       <Header />
-      <Container>
-        <Switch>
-          <Route path='/search'>
-            <Search
-              results={results}
-              setResults={setResults}
-              loading={loading}
-              setLoading={setLoading}
-            />
-          </Route>
+      <Switch>
+        <Route path='/search'>
+          <Search
+            results={results}
+            setResults={setResults}
+            loading={loading}
+            setLoading={setLoading}
+          />
+        </Route>
 
-          <Route path='/provider/:id'>
-            <Provider results={results} />
-          </Route>
-          <Route path='/'>
-            <Home
-              setResults={setResults}
-              loading={loading}
-              setLoading={setLoading}
-            />
-          </Route>
-        </Switch>
-      </Container>
+        <Route path='/provider/:id'>
+          <ProviderDetails results={results} />
+        </Route>
+        <Route path='/'>
+          <Home
+            setResults={setResults}
+            loading={loading}
+            setLoading={setLoading}
+          />
+        </Route>
+      </Switch>
       <Footer />
     </>
   )
