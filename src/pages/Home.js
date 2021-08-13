@@ -68,11 +68,10 @@ export default function Home({ setResults, loading, setLoading }) {
           <Col>
             <h2>News</h2>
             <ArticleCard
-              title='Fighting the Stigma of Mental Illness Through Music'
-              image='https://static01.nyt.com/images/2019/01/22/well/family/music-braunstein/music-braunstein-jumbo.jpg?quality=90&auto=webp'
-              text='An orchestra in which musicians are dealing with mental health
-            issues is working to harness the healing power of music.'
-              url='https://www.nytimes.com/2019/01/29/well/mind/fighting-the-stigma-of-mental-illness-through-music.html'
+              title='How Do I Know if I Have Adult A.D.H.D.?'
+              image='https://static01.nyt.com/images/2021/08/10/well/06ASKWELL-ADHD1/06ASKWELL-ADHD1-jumbo.jpg?quality=90&auto=webp'
+              text='The signs and symptoms that you might need an evaluation.'
+              url='https://www.nytimes.com/2021/08/06/well/mind/adult-adhd.html'
               author='The New York Times'
             />
             <ArticleCard
@@ -93,6 +92,13 @@ export default function Home({ setResults, loading, setLoading }) {
           </Col>
           <Col>
             <h2>Featured Article</h2>
+            <ArticleCard
+              title='Build Mental Endurance Like a Pro'
+              image='https://static01.nyt.com/images/2020/11/08/multimedia/08ah-athlete-advice01/merlin_179520366_fb5c57ec-212d-4197-bec4-c034c4c9b04f-jumbo.jpg?quality=90&auto=webp'
+              text='Athletes who have endured the most grueling tests have a lot to tell us about how to thrive in the pandemic.'
+              url='https://www.nytimes.com/2020/11/07/well/mind/athletes-pandemic-advice.html'
+              author='The New York Times'
+            />
           </Col>
           <Col>
             <h2>The Team</h2>
