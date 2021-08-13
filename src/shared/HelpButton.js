@@ -1,7 +1,11 @@
 import Button from 'react-bootstrap/Button'
 export default function HelpButton() {
   return (
-    <Button variant='outline-light' style={{ whiteSpace: 'nowrap' }}>
+    <Button
+      variant='outline-light'
+      style={{ whiteSpace: 'nowrap' }}
+      href='https://suicidepreventionlifeline.org/talk-to-someone-now/'
+    >
       <svg
         xmlns='http://www.w3.org/2000/svg'
         width='16'
