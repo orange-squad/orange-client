@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Card, Container } from 'react-bootstrap'
 import { getPlaceDetails } from '../helpers/fetchGoogleData'
@@ -6,16 +6,15 @@ import { titleCase } from './../helpers/textFormatting'
 
 function ProviderDetails({ results }) {
   let { id } = useParams()
-
-  let provider = results.find((provider) => provider.number === parseInt(id))
-
-  // provider = getPlaceDetails(provider)
-
-  const { credential, first_name, last_name, gender } = provider.basic
+  const [provider, setProvider] = useState(
+    results.find((result) => result.number === parseInt(id))
+  )
+  if (!provider) return ''
+  const { credential, first_name, last_name } = provider?.basic
 
   // set address as the primary location
   const { address_1, address_2, city, state, postal_code, telephone_number } =
-    provider.addresses[0]
+    provider?.addresses[0]
 
   return (
     <Container>

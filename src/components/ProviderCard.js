@@ -39,14 +39,11 @@ const ProviderCard = ({ data }) => {
           {city} {state} {postal_code}
           {telephone_number}
         </address>
-        {user_ratings_total > 0 && (
-          <>
-            <Card.Subtitle>Reviews:</Card.Subtitle>
-            <Card.Text>
-              {rating}/5 from {user_ratings_total} reviews
-            </Card.Text>
-          </>
-        )}
+
+        <Card.Subtitle>Reviews:</Card.Subtitle>
+        <Card.Text>
+          {rating}/5 from {user_ratings_total} reviews
+        </Card.Text>
       </Card.Body>
     </Card>
   )

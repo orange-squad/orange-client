@@ -15,11 +15,7 @@ export default function Header() {
       <Container>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Brand as={NavLink} to='/'>
-          <img
-            src={logo}
-            alt='Orange Wellness Logo'
-            // className="d-inline-block align-top"
-          />
+          <img src={logo} alt='Orange Wellness Logo' />
         </Navbar.Brand>
         <Navbar.Collapse id='basic-navbar-nav'>
           <Nav>
@@ -27,7 +23,7 @@ export default function Header() {
             <Nav.Link href='#'>BLOG</Nav.Link>
             <Nav.Link href='#'>ABOUT</Nav.Link>
             <Nav.Link href='#'>FOR THERAPISTS</Nav.Link>
-            <HelpButton />
+            <HelpButton className='align-self-flex-end' />
           </Nav>
         </Navbar.Collapse>
       </Container>

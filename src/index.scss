@@ -12,7 +12,6 @@ $info: #f67640;
 
 .jumbotron {
   overflow: hidden;
-  background-image: url('assets/hero-image.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -20,6 +19,12 @@ $info: #f67640;
   padding: 10rem 5rem;
   color: white;
   margin-bottom: 2rem;
+  background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url('assets/hero-image.jpeg');
 }
 
 a {
