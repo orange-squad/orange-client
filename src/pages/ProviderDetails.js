@@ -6,10 +6,16 @@ import { titleCase } from './../helpers/textFormatting'
 
 function ProviderDetails({ results }) {
   let { id } = useParams()
-  const [provider, setProvider] = useState(
-    results.find((result) => result.number === parseInt(id))
-  )
+  const [provider, setProvider] = useState(results[id])
+
+  // useEffect(() => {
+  //   getPlaceDetails(provider).then((updated) => {
+  //     setProvider(updated)
+  //   })
+  // }, [provider])
+
   if (!provider) return ''
+
   const { credential, first_name, last_name } = provider?.basic
 
   // set address as the primary location

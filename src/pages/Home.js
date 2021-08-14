@@ -3,6 +3,7 @@ import { Container, Row, Col, Jumbotron } from 'react-bootstrap'
 import SearchForm from '../components/SearchForm'
 import ArticleCard from '../components/ArticleCard'
 import TeamCard from '../components/TeamCard'
+import deepika from '../assets/deepika.jpeg'
 
 export default function Home({ setResults, loading, setLoading }) {
   return (
@@ -123,10 +124,7 @@ export default function Home({ setResults, loading, setLoading }) {
               name='Romani Poole'
               image='https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg'
             />
-            <TeamCard
-              name='Deepika Mohanty'
-              image='https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg'
-            />
+            <TeamCard name='Deepika Mohanty' image={deepika} />
             <TeamCard
               name='Katherine Gomez'
               image='https://icon-library.com/images/no-profile-pic-icon/no-profile-pic-icon-7.jpg'

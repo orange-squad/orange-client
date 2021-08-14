@@ -1,12 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Container,
-  InputGroup,
-  Button,
-  FormControl,
-  Form,
-  Spinner,
-} from 'react-bootstrap'
+import { InputGroup, Button, FormControl, Form, Spinner } from 'react-bootstrap'
 import { useLocation, useHistory } from 'react-router-dom'
 
 import { getPlaceId } from '../helpers/fetchGoogleData'
@@ -51,6 +44,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     setLoading(true)
+
     try {
       // fetch care provider data from npi registry via proxy
       const response = await fetch(
@@ -59,7 +53,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
       const json = await response.json()
       // get google data
       const finalResults = await getPlaceId(json.results)
-      await setResults(Object.values(finalResults))
+      await setResults(finalResults)
     } catch (error) {
       console.error(error)
     }
@@ -75,7 +69,7 @@ const SearchForm = ({ setResults, loading, setLoading }) => {
             type='text'
             value={city}
             onChange={(e) => setCity(e.target.value)}
-            placeholder='Enter City'
+            placeholder='Search by city'
           />
           {loading ? (
             <Button variant='secondary' disabled>
