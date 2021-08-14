@@ -4,7 +4,7 @@ import { Image, Card } from 'react-bootstrap'
 function TeamCard({ image, name, url }) {
   return (
     <Card as='a' href={url} className='team-card'>
-      <Image src={image} roundedCircle width='64' />
+      <Image src={image} roundedCircle width='64' height='64' />
       {name}
     </Card>
   )

@@ -63,6 +63,7 @@ a {
 }
 .nav-logo {
   width: 250px;
+  image-rendering: crisp-edges;
 }
 .navbar-nav {
   width: 100%;
@@ -90,4 +91,5 @@ a {
 
 form {
   margin-top: 3rem;
+  width: 35rem;
 }

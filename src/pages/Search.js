@@ -29,9 +29,11 @@ const Search = ({ results, setResults, loading, setLoading }) => {
           />
           <div className='provider-grid'>
             {displayedResults &&
-              displayedResults.map((provider) => {
-                return <ProviderCard data={provider} key={provider.number} />
-              })}
+              Object.entries(displayedResults).map(
+                ([providerId, providerData]) => {
+                  return <ProviderCard key={providerId} data={providerData} />
+                }
+              )}
           </div>
         </Col>
       </Row>
